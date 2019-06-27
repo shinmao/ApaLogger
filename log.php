@@ -72,6 +72,7 @@ while(!feof($f)){
 	array_push( $r, array('<div class="col-md-2 box">', $client_ip[0], '</div>', '<div class="col-md-6 box">', $request_url[0], '</div>', '<div class="col-md-4 box">', $client_agent[1], '</div>') );
 }
 $counter = count($r) - 1;
+$end = $counter;
 if($_GET['n']){
 	$end = $_GET['n'];
 }
@@ -120,6 +121,7 @@ while(!feof($f1)){
 	array_push( $r1, array('<div class="col-md-2 box">', $client_ip1[0], '</div>', '<div class="col-md-6 box">', $payload1[0], '</div>', '<div class="col-md-4 box">', $request_url1[0], '</div>') );
 }
 $counter1 = count($r1) - 1;
+$end = $counter1;
 if($_GET['n']){
 	$end = $_GET['n'];
 }
@@ -127,7 +129,7 @@ fclose($f1);
 ?>
 
 <button type="button" class="btn btn-primary">
-  POST <span class="badge badge-light"><?php echo $counter1; ?></span>
+  POST <span class="badge badge-light"><?php echo $end; ?></span>
   <span class="sr-only">unread messages</span>
 </button>
 
